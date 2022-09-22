@@ -1,11 +1,15 @@
 
 import './App.css';
 import Header from './components/Header';
+import ItemListContainer from './components/ItemListContainer';
 
 
 function App() {
   return (
-    <Header/>
+    <>
+      <Header/>
+      <ItemListContainer greeting="Mi tienda"/>
+    </>
      
   
   );
