@@ -2,16 +2,17 @@
 
 
 .App-title{
-  color: white;
+  color: black;
   font-family: Noto Sans;
   font-weight: 700;
+  font-size: xx-large;
 }
 
 .App-subtitle {
   color: black;
   font-family: Noto Sans;
   font-weight: 400;
-  font-size: larger;
+  font-size: x-large;
   text-decoration: none;
 }
 
@@ -19,6 +20,7 @@
   color: black;
   font-family: Noto Sans;
   font-weight: 300;
+  font-size: large;
 }
 
 .App-header{
@@ -39,13 +41,62 @@
   display:block;
 }
 
-@media (min-width: 700px){
+.App-tag{
+  background-color: #ef4011;
+  border-radius: 5px;
+  font-size: small;
+  padding: 2px;
+}
+
+.App-filter{
+  display: none;
+}
+
+.App-btn{
+  background-color: rgb(3, 39, 3) !important;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 15rem;
+  overflow: auto;
+  box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.4);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+  font-family:Noto Sans ;
+}
+
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: rgb(3, 39, 3);
+}
+
+@media (min-width: 768px){
   .App-navbar{
     display:block;
   }
 
   .App-toggler{
     display:none;
+  }
+
+  .App-filter{
+    display: block;
   }
 }
 

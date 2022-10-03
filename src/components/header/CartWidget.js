@@ -4,7 +4,7 @@ const Cart = () =>{
     }
     return(
         <button className="bg-transparent border-0 me-1">
-            <span style={styles} ><i class="fa-solid fa-cart-shopping fa-2xl"></i></span>
+            <span style={styles} ><i className="fa-solid fa-cart-shopping fa-2xl"></i></span>
         </button>
     );
 }
