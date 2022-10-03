@@ -56,34 +56,13 @@
   background-color: rgb(3, 39, 3) !important;
 }
 
-.dropdown {
-  display: inline-block;
-  position: relative;
+.App-card{
+  border-radius: 10px;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  width: 15rem;
-  overflow: auto;
-  box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.4);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  color: #000000;
-  padding: 5px;
-  text-decoration: none;
-  font-family:Noto Sans ;
-}
-
-.dropdown-content a:hover {
-  color: #FFFFFF;
-  background-color: rgb(3, 39, 3);
+.App-card:hover{
+  box-shadow:5px 5px 40px  rgba(0, 0, 0, 0.2);
+  transition: 1s;
 }
 
 @media (min-width: 768px){
