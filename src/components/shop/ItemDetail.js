@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import hombres from "../data/Elements"
+import products from "../data/Elements"
 
 
 const ItemDetail = () =>{
@@ -14,13 +14,13 @@ const ItemDetail = () =>{
 
     const getItem = ()=>{
         return new Promise((resolve) => {
-            resolve(hombres.find(i=> i.id == itemId))
+            resolve(products.find(i=> i.id == itemId))
         })
     }
 
     return (
         <div className="container-fluid row d-flex justify-content-center">
-                <div className="col-6">
+                <div className="col-6 mt-3">
                     <img src={item.image} />
                 </div>
                 <div className="col-4">
