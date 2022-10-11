@@ -2,7 +2,7 @@ const products = [
     {   "id": 1, 
         "name":"Camiseta alternativa Boca", 
         "price":12.099, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/14399870-455-588/IB9463-A.jpg?v=637992174446100000",
+        "image":"https://i.ibb.co/n0JbDZ5/bocaT.png",
         "category": "futbol",
         "team": "boca",
         "type": "camiseta"
@@ -10,7 +10,7 @@ const products = [
     {   "id": 2, 
         "name":"Camiseta titular Independiente", 
         "price":11.599, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/14294612-455-588/77156001-A.jpg?v=637980756103600000",
+        "image":"https://i.ibb.co/NW5dMGc/iT.png",
         "category": "futbol",
         "team": "independiente", 
         "type": "camiseta"
@@ -19,7 +19,7 @@ const products = [
         "id": 3, 
         "name":"Camiseta titular River Plate", 
         "price":15.999, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/14189699-455-588/GB7592-A.jpg?v=637962774204900000",
+        "image":"https://i.ibb.co/T87ZqMm/riverT.jpg",
         "category": "futbol",
         "team": "river",
         "type": "camiseta"
@@ -28,7 +28,7 @@ const products = [
         "id": 4, 
         "name":"Camiseta Alternativa Independiente", 
         "price":13.999, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/14400996-455-588/77156701-A.jpg?v=637992891725800000",
+        "image":"https://i.ibb.co/gwdLxFC/iA.png",
         "category": "futbol",
         "team": "independiente",
         "type": "camiseta"
@@ -37,7 +37,7 @@ const products = [
         "id": 5, 
         "name":"Camiseta alternativa River Plate", 
         "price":15.999, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/14313358-455-588/GB7588-A.jpg?v=637986037333870000",
+        "image":"https://i.ibb.co/CsV5q2S/r-A-removebg-preview.png",
         "category": "futbol",
         "team": "river",
         "type": "camiseta"
@@ -46,7 +46,7 @@ const products = [
         "id": 6, 
         "name":"Camiseta titular Newells", 
         "price":15.999, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/14058869-455-588/22010110121-A.jpg?v=637945245819900000", 
+        "image":"https://i.ibb.co/M1ssbMc/n-T-removebg-preview.png", 
         "category": "futbol",
         "team": "newells",
         "type": "camiseta"
@@ -55,16 +55,16 @@ const products = [
         "id": 7, 
         "name":"Camiseta alternativa Newells", 
         "price":15.999, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/14058893-455-588/22010103102-A.jpg?v=637945249360900000",
+        "image":"https://i.ibb.co/pR2dhBz/n-A-removebg-preview.png",
         "category": "futbol",
         "team": "newells",
         "type": "camiseta"
     },
     {
         "id": 8, 
-        "name":"Camiseta alternativa Central", 
+        "name":"Camiseta titular Central", 
         "price":15.999, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/12529789-455-588/RC7904806-A.jpg?v=637795773683970000",
+        "image":"https://i.ibb.co/F4HWpZn/central-removebg-preview.png",
         "category": "futbol",
         "team": "central",
         "type": "camiseta"
@@ -73,7 +73,7 @@ const products = [
         "id": 9, 
         "name":"Camiseta alternativa Talleres", 
         "price":13.699, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/13423190-455-588/2201010203-A.jpg?v=637874534484200000",
+        "image":"https://i.ibb.co/pxWcvxX/t-A-removebg-preview.png",
         "category": "futbol",
         "team": "talleres",
         "type": "camiseta"
@@ -82,7 +82,7 @@ const products = [
         "id": 10, 
         "name":"Camiseta titular Talleres", 
         "price":14.099, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/14398904-455-588/2201010304-A.jpg?v=637992040966970000",
+        "image":"https://i.ibb.co/DktPnkf/tT.png",
         "category": "futbol",
         "team": "talleres",
         "type": "camiseta"
@@ -90,11 +90,11 @@ const products = [
     },
     {
         "id": 11, 
-        "name":"Camiseta titular Instituto", 
+        "name":"Camiseta titular San Lorenzo", 
         "price":13.699, 
-        "image":"https://newsport.vteximg.com.br/arquivos/ids/12784257-1000-1000/22011-A.jpg?v=637812243745200000",
+        "image":"https://i.ibb.co/JCJg5g5/sn-T-removebg-preview.png",
         "category": "futbol",
-        "team": "instituto",
+        "team": "san lorenzo",
         "type": "camiseta"
     },
     {
@@ -135,9 +135,27 @@ const products = [
     },
     {
         "id": 16, 
-        "name":"Camiseta titular Union", 
-        "price":13.699, 
-        "image":"https://http2.mlstatic.com/D_NQ_NP_631513-MLA32636139422_102019-O.jpg",
+        "name":"Camiseta Argentina Qatar 2022", 
+        "price":14.099, 
+        "image":"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSy0xr4MM0H_yqtgcsjmmZsFz4UMVQVdps4ae_fCz0ZK6E__siwrSek5bXKV15l6xNPdhsvliuq_vw&usqp=CAc",
+        "category": "futbol",
+        "team": "argentina",
+        "type": "camiseta"
+    },
+    {
+        "id": 17, 
+        "name":"Camiseta Golden State Warriors", 
+        "price":14.099, 
+        "image":"https://images.footballfanatics.com/golden-state-warriors/golden-state-warriors-nike-icon-edition-swingman-jersey-royal-stephen-curry-unisex_ss4_p-13349705+u-99p4oaahgsihm35bjg9r+v-c17f5924d5604352893dcbad25ba3d65.jpg?_hv=2&w=340",
+        "category": "basquet",
+        "team": "union",
+        "type": "camiseta"
+    },
+    {
+        "id": 16, 
+        "name":"Camiseta Golden State Warriors", 
+        "price":14.099, 
+        "image":"https://images.footballfanatics.com/golden-state-warriors/golden-state-warriors-nike-icon-edition-swingman-jersey-royal-stephen-curry-unisex_ss4_p-13349705+u-99p4oaahgsihm35bjg9r+v-c17f5924d5604352893dcbad25ba3d65.jpg?_hv=2&w=340",
         "category": "basquet",
         "team": "union",
         "type": "camiseta"

@@ -17,9 +17,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path={'/'} element={<Index/>}/>
-        <Route path={"/category/futbol"} element={<ItemListContainer/>}/>
-        <Route path={"/category/nba"} element={<ItemListContainer/>}/>
-        <Route path={"/category/item/:id"} element={<ItemDetail/>}/>
+        <Route path={"/category/:category"} element={<ItemListContainer/>}/>
+        <Route path={"/item/:id"} element={<ItemDetail/>}/>
       </Routes>
     </BrowserRouter>
     </>

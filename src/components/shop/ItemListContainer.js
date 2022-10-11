@@ -1,28 +1,34 @@
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
 import products from "../data/Elements"
 import ItemCard from "./ItemCard";
 
 
 const ItemListContainer = ()=>{
     
+    const {category} = useParams()
+
     const [items, setItems] = useState([])
     
     useEffect(()=>{
-        getProducts().then(response => {setItems(response)})
-    }, []);
+        getProducts().then(response => {
+            if (category) {
+               setItems(response.filter(i => i.category === category))
+            }else{
+                setItems(response)
+            }  
+        })
+    }, [category]);
     
     const getProducts = () =>{
         return new Promise(resolve => {
-            setTimeout(()=>{
                 resolve( products )
-            }, 1500)
         })
     }
 
     return(
-        <div className="row container-fluid">
-            <div className="col-3"></div>
-            <div className="col-9 d-flex justify-content-between flex-wrap">
+        <div className="m-3 d-flex justify-content-center">
+            <div className="col-10 d-flex justify-content-evenly flex-wrap">
               {items.map(el => <ItemCard {...el}/>)}
             </div>
         </div>
