@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { CartContext } from "../../context/Context";
 import products from "../data/Elements"
-
+import ItemCount from "./ItemCount";
 
 const ItemDetail = () =>{
-    const [item, setItem] = useState([])
+    const [item, setItem] = useState([]);
     
-    const {id: itemId}= useParams()
+    const {id: itemId} = useParams();
+
+    const { add } = useContext( CartContext );
 
     useEffect(()=>{
         getItem().then (response => {setItem(response)})
@@ -19,7 +22,7 @@ const ItemDetail = () =>{
     }
 
     return (
-        <div className="container-fluid d-flex justify-content-center align-items-center">
+             <div className="container-fluid d-flex justify-content-center align-items-center">
                 <div className="col-8 col-md-6 mt-5">
                     <img src={item.image} />
                 </div>
@@ -31,14 +34,13 @@ const ItemDetail = () =>{
                         <h2 className="App-subtitle">Precio: ${item.price}</h2>
                         <p className="text-danger">Hasta tres cuotas sin interés de {item.price / 3}</p>
                     </div>
+                    <h2 className="App-paragraph mt-3">Cantidad</h2>
+                    <ItemCount/>
                     <div className="mt-3">
-                        <h3 className="App-paragraph">Talles</h3>
-                    </div>
-                    <div className="mt-3">
-                        <button className="App-btn btn-lg text-white">Agregar al carrito</button>
+                        <button onClick={()=>{add(item)}} className="btn App-btn App-paragraph btn-lg text-white">Agregar</button>
                     </div>
                 </div>
-        </div>
+                </div>
     )
 }
 

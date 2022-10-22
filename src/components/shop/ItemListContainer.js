@@ -8,7 +8,7 @@ const ItemListContainer = ()=>{
     
     const {category} = useParams()
 
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState([]);
     
     useEffect(()=>{
         getProducts().then(response => {
@@ -29,7 +29,7 @@ const ItemListContainer = ()=>{
     return(
         <div className="m-3 d-flex justify-content-center">
             <div className="col-10 d-flex justify-content-evenly flex-wrap">
-              {items.map(el => <ItemCard {...el}/>)}
+              {items.map(el => <ItemCard key={el.id} {...el}/>)}
             </div>
         </div>
     )
