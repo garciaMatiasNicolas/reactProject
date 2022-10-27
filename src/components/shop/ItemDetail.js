@@ -45,11 +45,11 @@ const ItemDetail = () =>{
 
 
     return (
-             <div className="container-fluid d-flex justify-content-center align-items-center">
-                <div className="col-8 col-md-6 mt-5">
+             <div className="container-fluid App-cards-container">
+                <div className="col-8 col-md-6 col-xl-4 mt-5">
                     <img className="w-75" src={item.image} />
                 </div>
-                <div className="col-8 col-md-4">
+                <div className="col-8 col-md-6 col-xl-4">
                     <div>
                         <h1 className="App-title mt-5">{item.name}</h1>
                     </div>

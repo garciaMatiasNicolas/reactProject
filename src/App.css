@@ -73,6 +73,13 @@
   overflow: hidden;
 }
 
+.App-cards-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (min-width: 768px){
   .App-navbar{
     display:block;
@@ -85,6 +92,21 @@
   .App-filter{
     display: block;
   }
+
+  .App-cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 
+@media (min-width: 1200px){
+  .App-cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+}
 
