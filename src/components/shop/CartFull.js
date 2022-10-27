@@ -1,43 +1,51 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../../context/Context";
 import CartCards from "./CartCards";
 import DataBuyer from "./DataBuyer";
 
 const CartFull = () =>{
-    const array = [];
 
-    const {itemsCart} = useContext ( CartContext );
+    const {itemsCart, totalPrice, setTotalPrice} = useContext ( CartContext );
+
+    useEffect(()=>{
+        calculate()
+    },[])
 
     const prices = () => {
-        let id = document.getElementById('total');
-        let id2 = document.getElementById('value').value;
-        let button = document.getElementById('button-total');
-        let button2 = document.getElementById('button-comprar');
-        id2 === 'SI' && array.push(500)  
-        itemsCart.forEach(el => array.push(el.price))
-        let total = array.reduce((a, b) => a + b, 0);
-        id.innerHTML = `Total: ${total} pesos`
-        button.className = 'd-none'
-        button2.className = 'd-block App-btn btn text-white btn-sm '
+     console.log(totalPrice)
+    }
+
+    const calculate = ()=>{
+        setTotalPrice(totalPrice.reduce((a,b)=> a + b, 0))
+        setTotalPrice([...totalPrice])
+    }
+
+    const handleOnChange = (e) => {
+        const value = e.target.value
+        if(value === 'SI'){
+            setTotalPrice(totalPrice.push(500));
+            e.target.setAttribute("disabled", "");
+            setTotalPrice(totalPrice.reduce((a,b)=> a + b, 0))
+        };
+        
     }
 
     return(
-        <div className="container-fluid d-flex justify-content-between">
-            <div className="col-6">{itemsCart.map(el => <CartCards key={el.id} {...el}/>)}</div>
-            <div className="col-6" >
+        <div className="container-fluid">
+            <div className="col-12">{itemsCart.map((el, id) => <CartCards key={id} {...el}/>)}</div>
+            <div className="col-12" >
                 <div className="mt-5 ms-5">
                         <h2 className="App-subtitle">Subtotal de tu compra:</h2>
                         <h2 className="App-paragraph mt-4">¿Desea agregar envio?</h2>
                         <h2 className="App-paragraph">(Solo Cordoba capital + 500$)</h2>
-                        <select id="value" className="form-select form-select-sm w-50">
+                        <select id="value" onChange={handleOnChange} className="form-select form-select-sm w-75 rounded-0">
                             <option selected disabled="disabled" aria-required>Seleccione una opcion</option>
-                            <option>SI</option>
+                            <option >SI</option>
                             <option>NO</option>
                         </select>
-                        <div className="d-flex justify-content-between align-items-center w-75">
-                            <button id="button-total" className="App-btn btn text-white btn-sm" onClick={()=>{prices()}}>Calcular</button>
-                            <p className="App-paragraph fs-4 mt-2 me-5" id="total">Total: 0</p>
-                            <button id="button-comprar" data-bs-toggle="modal" data-bs-target="#exampleModal" className="d-none">Comprar</button>
+                        <div className="d-flex flex-column justify-content-between align-items-start w-75">
+                            <p className="App-paragraph fs-4 mt-2">Total:{totalPrice}</p>
+                            <button id="button-comprar" data-bs-toggle="modal" data-bs-target="#exampleModal" className="App-btn btn w-100 text-white rounded-0">Comprar</button>
                         </div>
                         <DataBuyer/>
                 </div>

@@ -1,6 +1,6 @@
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import products from "../data/Elements"
 import ItemCard from "./ItemCard";
 
 
@@ -12,24 +12,25 @@ const ItemListContainer = ()=>{
     
     useEffect(()=>{
         getProducts().then(response => {
+            let arrayPorducts = response.docs.map( d =>  ({id: d.id,  ...d.data()}) )
             if (category) {
-               setItems(response.filter(i => i.category === category))
+               setItems(arrayPorducts.filter(i => i.category === category))
             }else{
-                setItems(response)
+                setItems(arrayPorducts)
             }  
         })
     }, [category]);
     
     const getProducts = () =>{
-        return new Promise(resolve => {
-                resolve( products )
-        })
+       const dataBase = getFirestore();
+       const myCollection = collection(dataBase, 'Items');
+       return getDocs(myCollection)
     }
 
     return(
         <div className="m-3 d-flex justify-content-center">
             <div className="col-10 d-flex justify-content-evenly flex-wrap">
-              {items.map(el => <ItemCard key={el.id} {...el}/>)}
+              {items.map(p => <ItemCard key={p.id} {...p} />)}
             </div>
         </div>
     )

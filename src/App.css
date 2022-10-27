@@ -65,6 +65,14 @@
   transition: 1s;
 }
 
+.App-carrousel{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+
 @media (min-width: 768px){
   .App-navbar{
     display:block;

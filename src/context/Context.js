@@ -6,17 +6,19 @@ const CartContext = createContext( [] );
 const CartProvider = ( {children} )=> {
     // ESTADOS 
     const [itemsCart, setItemsCart] = useState([]);
+
+    const [item, setItem] = useState([]);
     
     const [order, setOrder] = useState({});
-
-    const [amount, setAmount] = useState([]);
     
     const [count, setCount]= useState(0);
+
+    const [totalPrice, setTotalPrice] = useState([])
 
     // FUNCIONES
     const add = ( item )=> {
         setItemsCart([...itemsCart, item]);
-        localStorage.setItem("carritoCompras", JSON.stringify(itemsCart));
+        item.cantidad > 1 ? setTotalPrice([...totalPrice, item.cantidad*item.price]) : setTotalPrice([...totalPrice, item.price])
         swal({
             title: 'Producto agregado',
             icon: 'success',
@@ -24,32 +26,43 @@ const CartProvider = ( {children} )=> {
         })
     }
     
-    const select = () => {
-        setAmount([...amount, count])
-        console.log(amount);
-    }
-    
     const suma = ()=> {
-        setCount(count => count + 1)
+        setCount(count => count + 1);
     }
     
     const resta = ()=> {
-        setCount(count => count - 1)
+        setCount(count => count - 1);
+    }
+
+    const deleteAll = ()=>{
+        setItemsCart([]);
+        setTotalPrice([]);
+    }
+
+    const deleteItem = ( itemParam ) =>{
+        let item = itemsCart.find((prod)=> prod.id === itemParam.id);
+        let indice = itemsCart.indexOf(item);
+        setItemsCart(itemsCart.splice(indice, 1));
     }
 
     
     // EXPORT DE ESTADOS Y FUNCIONES DEL CONTEXTO
     const context = {
+        setItemsCart,
         itemsCart,
         count,
-        amount,
         add,
-        select,
         suma,
         resta,
         order, 
-        setOrder
-
+        setOrder,
+        deleteAll, 
+        setCount,
+        item,
+        setItem,
+        totalPrice,
+        setTotalPrice,
+        deleteItem
     }
     
     return(

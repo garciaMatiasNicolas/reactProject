@@ -1,4 +1,5 @@
 import Carrousel from "./Carrousel"
+import CarrouselItems from "./Carrousel-items"
 
 
 const Index = ()=>{
@@ -7,6 +8,7 @@ const Index = ()=>{
        
             <div className="d-flex justify-content-between flex-column">
                 <Carrousel/>
+                <CarrouselItems/>
             </div>
     )
 }

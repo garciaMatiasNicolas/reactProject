@@ -9,7 +9,6 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import { CartProvider } from './context/Context';
 import Cart from './components/shop/Cart';
 import Order from './components/shop/Order';
-import FireData from './components/FireData';
 
 function App() {
 
@@ -18,7 +17,6 @@ function App() {
     <CartProvider>
       <BrowserRouter>
             <Header/>
-            <FireData/>
             <Routes>
               <Route path={'/'} element={<Index/>}/>
               <Route path={'/cart'} element={<Cart/>}/>

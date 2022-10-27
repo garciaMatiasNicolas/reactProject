@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import FormData from "./FormData";
 
 const DataBuyer = () => {;
@@ -12,11 +11,6 @@ const DataBuyer = () => {;
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <FormData />
-                <div className='modal-footer'>
-                    <Link to={'/cart/order'} >
-                        <button className='text-white btn mt-3 App-btn btn-sm' data-bs-dismiss="modal" aria-label="Close">Finalizar</button>
-                    </Link>
-                </div>
             </div>
         </div>
     </div>

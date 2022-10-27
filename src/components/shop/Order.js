@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Order = () =>{
 
-    const {itemsCart, order} = useContext( CartContext );
+    const {itemsCart, deleteAll, order} = useContext( CartContext );
 
     const pushOrder = ()=>{
         const dataBase = getFirestore();
@@ -13,7 +13,7 @@ const Order = () =>{
         addDoc( ordersCollection, order ).then( ({id}) => {
             console.log(id)
         })
-        itemsCart.splice(0, itemsCart.length);
+        deleteAll();
     }
 
     return(
@@ -38,11 +38,11 @@ const Order = () =>{
                 </div>
                 <div>
                     <h3 className="d-inline App-subtitle fs-3">Producto(s): </h3>
-                    {itemsCart.map(e => <p className="d-inline App-paragraph fs-3 ms-3 mt-1">{e.name}</p>)}
+                    {itemsCart.map((e, id) => <p key={id} className="d-inline App-paragraph fs-3 ms-3 mt-1">{e.name}</p>)}
                 </div>
                 <div>
                     <h3 className="d-inline App-subtitle fs-3">Total: </h3>
-                    {itemsCart.map(e => <p className="d-inline App-paragraph fs-3 ms-3 mt-1">{e.price}</p>)}
+                    <p className="d-inline App-paragraph fs-3 ms-3 mt-1">{order.totalPrice}$</p>
                 </div>
                 <Link to={'/'}>
                     <button onClick={()=>{pushOrder()}} className="btn App-btn text-white mt-5" type='button'>LEVANTAR ORDERN</button>
