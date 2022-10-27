@@ -17,13 +17,13 @@ const FormData = ()=>{
     }
 
 return(
-<>
+<div className="modal-body">
     <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="m-3">
-            <input name='nombre' type='text' className='form-control m-3 w-75' placeholder='Nombre completo' {...register('nombre')} required/>
-            <input name='email' type='email' className='form-control m-3 w-75' placeholder='Email' {...register('emial')} required/>
-            <input name='direccion' type='adress' className='form-control m-3 w-75' placeholder='Direccion' {...register('direccion')} required/>
-            <input name='telefono' type='tel' className='form-control m-3 w-75' placeholder='Telefono' {...register('telefono')} required/>
+        <div className="mt-5">
+            <input name='nombre' type='text' className='form-control m-3 w-75' placeholder='Nombre completo' {...register('nombre')} required autoComplete="off"/>
+            <input name='email' type='email' className='form-control m-3 w-75' placeholder='Email' {...register('emial')} required autoComplete="off"/>
+            <input name='direccion' type='adress' className='form-control m-3 w-75' placeholder='Direccion' {...register('direccion')} required autoComplete="off"/>
+            <input name='telefono' type='tel' className='form-control m-3 w-75' placeholder='Telefono' {...register('telefono')} required autoComplete="off"/>
             <button className="btn App-btn btn-sm text-white m-3">Validar datos</button>
         </div>
     </form>
@@ -32,7 +32,7 @@ return(
             <button id="btn-end" disabled className='text-white btn mt-3 App-btn btn-sm' data-bs-dismiss="modal" aria-label="Close">Finalizar</button>
         </Link>
     </div>
-</>
+</div>
 )
 }
 

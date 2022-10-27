@@ -13,7 +13,7 @@ import Order from './components/shop/Order';
 function App() {
 
   return (
-    <>
+    <div className='body'>
     <CartProvider>
       <BrowserRouter>
             <Header/>
@@ -26,7 +26,7 @@ function App() {
             </Routes>
       </BrowserRouter>  
     </CartProvider>
-    </>
+    </div>
   );
 }
 

@@ -43,7 +43,7 @@ const CartFull = () =>{
                             <option >SI</option>
                             <option>NO</option>
                         </select>
-                        <div className="d-flex flex-column justify-content-between align-items-start w-75">
+                        <div className="d-flex flex-column justify-content-between align-items-start w-75 mb-5">
                             <p className="App-paragraph fs-4 mt-2">Total:{totalPrice}</p>
                             <button id="button-comprar" data-bs-toggle="modal" data-bs-target="#exampleModal" className="App-btn btn w-100 text-white rounded-0">Comprar</button>
                         </div>

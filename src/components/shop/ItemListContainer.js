@@ -29,7 +29,7 @@ const ItemListContainer = ()=>{
 
     return(
         <div className="m-3 d-flex justify-content-center">
-            <div className="col-12 d-flex justify-content-evenly flex-wrap">
+            <div className="col-12 col-sm-9 d-flex justify-content-evenly flex-wrap">
               {items.map(p => <ItemCard key={p.id} {...p} />)}
             </div>
         </div>
