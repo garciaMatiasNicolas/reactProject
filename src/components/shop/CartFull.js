@@ -2,53 +2,37 @@ import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/Context";
 import CartCards from "./CartCards";
-import DataBuyer from "./DataBuyer";
 
 const CartFull = () =>{
 
-    const {itemsCart, totalPrice, setTotalPrice} = useContext ( CartContext );
+    const {itemsCart, totalPrice, sumarTotal} = useContext ( CartContext );
 
-    useEffect(()=>{
-        calculate()
-    },[])
-
-    const prices = () => {
-     console.log(totalPrice)
-    }
-
-    const calculate = ()=>{
-        setTotalPrice(totalPrice.reduce((a,b)=> a + b, 0))
-        setTotalPrice([...totalPrice])
-    }
-
-    const handleOnChange = (e) => {
-        const value = e.target.value
-        if(value === 'SI'){
-            setTotalPrice(totalPrice.push(500));
-            e.target.setAttribute("disabled", "");
-            setTotalPrice(totalPrice.reduce((a,b)=> a + b, 0))
-        };
-        
+    const handleOnclick = ()=>{
+        let resultado = document.getElementById('total');
+        let btn = document.getElementById('calcular');
+        resultado.innerHTML= `SubTotal de tu compra: ${totalPrice.reduce((a , b)=> a + b, 0)}`
+        btn.className='d-none'
     }
 
     return(
         <div className="container-fluid">
             <div className="col-12">{itemsCart.map((el, id) => <CartCards key={id} {...el}/>)}</div>
             <div className="col-12" >
-                <div className="mt-5 ms-5">
-                        <h2 className="App-subtitle">Subtotal de tu compra:</h2>
-                        <h2 className="App-paragraph mt-4">¿Desea agregar envio?</h2>
-                        <h2 className="App-paragraph">(Solo Cordoba capital + 500$)</h2>
-                        <select id="value" onChange={handleOnChange} className="form-select form-select-sm w-75 rounded-0">
-                            <option selected disabled="disabled" aria-required>Seleccione una opcion</option>
-                            <option >SI</option>
-                            <option>NO</option>
-                        </select>
+                <div className="mt-5 ms-5 w-75">
                         <div className="d-flex flex-column justify-content-between align-items-start w-75 mb-5">
-                            <p className="App-paragraph fs-4 mt-2">Total:{totalPrice}</p>
+                            {itemsCart.length >= 2 ? 
+                            <div>
+                                <button id="calcular" className="App-btn btn w-100 text-white rounded-0" onClick={handleOnclick} >Calcular</button>
+                                <p id="total" className="App paragph fs-4 mt-2"></p>
+                            </div> :
+                            <div className="d-flex justify-content-between">
+                                <h2 className="App-subtitle">Subtotal de tu compra:</h2>
+                                <p className="App paragph ms-5 fs-5">Total: {totalPrice}</p>
+                            </div>
+                            }
                             <Link to={'/cart/personal-data'}>
                                 <button id="button-comprar" className="App-btn btn w-100 text-white rounded-0">Confirmar
-                                <span className="ms-2"><i class="fa-solid fa-arrow-right"></i></span>
+                                <span className="ms-2"><i className="fa-solid fa-arrow-right"></i></span>
                                 </button>
                             </Link>
                         </div>

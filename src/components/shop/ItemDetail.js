@@ -7,7 +7,7 @@ import { CartContext } from "../../context/Context";
 const ItemDetail = () =>{
     const {id: itemId} = useParams();
 
-    const { add, item, setItem, count, resta, suma} = useContext( CartContext );
+    const { add, item, setItem, count, resta, suma, sumarTotal} = useContext( CartContext );
 
     useEffect(()=>{
         getItem()

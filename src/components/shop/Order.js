@@ -17,7 +17,7 @@ const Order = () =>{
     }
 
     return(
-        <div>
+        <div className="container-fluid">
             <div className="ms-5 mt-3 w-50">
                 <h2 className="App-title fs-4">Resumen de su compra:</h2>
                 <div>

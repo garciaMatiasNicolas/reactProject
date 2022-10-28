@@ -25,6 +25,10 @@ const CartProvider = ( {children} )=> {
             buttons: 'Aceptar'
         })
     }
+
+    const sumarTotal = () => {
+       setTotalPrice([totalPrice.reduce((a , b)=> a + b, 0)])
+    }
     
     const suma = ()=> {
         setCount(count => count + 1);
@@ -62,7 +66,8 @@ const CartProvider = ( {children} )=> {
         setItem,
         totalPrice,
         setTotalPrice,
-        deleteItem
+        deleteItem,
+        sumarTotal
     }
     
     return(
