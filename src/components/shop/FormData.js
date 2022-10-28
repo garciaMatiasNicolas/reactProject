@@ -17,7 +17,7 @@ const FormData = ()=>{
     }
 
 return(
-<div className="modal-body">
+<div>
     <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mt-5">
             <input name='nombre' type='text' className='form-control m-3 w-75' placeholder='Nombre completo' {...register('nombre')} required autoComplete="off"/>
@@ -27,9 +27,13 @@ return(
             <button className="btn App-btn btn-sm text-white m-3">Validar datos</button>
         </div>
     </form>
-    <div className='modal-footer'>
+    <div className="ms-3">
         <Link to={'/cart/order'} >
-            <button id="btn-end" disabled className='text-white btn mt-3 App-btn btn-sm' data-bs-dismiss="modal" aria-label="Close">Finalizar</button>
+            <button id="btn-end" disabled className='text-white btn mt-3 App-btn btn-sm' data-bs-dismiss="modal" aria-label="Close">Finalizar 
+            <span>
+            <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            </button>
         </Link>
     </div>
 </div>

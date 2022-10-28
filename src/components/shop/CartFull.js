@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/Context";
 import CartCards from "./CartCards";
 import DataBuyer from "./DataBuyer";
@@ -45,9 +46,12 @@ const CartFull = () =>{
                         </select>
                         <div className="d-flex flex-column justify-content-between align-items-start w-75 mb-5">
                             <p className="App-paragraph fs-4 mt-2">Total:{totalPrice}</p>
-                            <button id="button-comprar" data-bs-toggle="modal" data-bs-target="#exampleModal" className="App-btn btn w-100 text-white rounded-0">Comprar</button>
+                            <Link to={'/cart/personal-data'}>
+                                <button id="button-comprar" className="App-btn btn w-100 text-white rounded-0">Confirmar
+                                <span className="ms-2"><i class="fa-solid fa-arrow-right"></i></span>
+                                </button>
+                            </Link>
                         </div>
-                        <DataBuyer/>
                 </div>
             </div>
         </div>

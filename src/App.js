@@ -9,6 +9,7 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import { CartProvider } from './context/Context';
 import Cart from './components/shop/Cart';
 import Order from './components/shop/Order';
+import DataBuyer from './components/shop/DataBuyer';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Routes>
               <Route path={'/'} element={<Index/>}/>
               <Route path={'/cart'} element={<Cart/>}/>
+              <Route path={'/cart/personal-data'} element={<DataBuyer/>}/>
               <Route path={'/cart/order'} element={<Order/>}/>
               <Route path={"/category/:category"} element={<ItemListContainer/>}/>
               <Route path={"/item/:id"} element={<ItemDetail/>}/>
