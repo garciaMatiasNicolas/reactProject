@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/Context";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 const Order = () =>{
 
@@ -14,6 +15,12 @@ const Order = () =>{
             console.log(id)
         })
         deleteAll();
+        swal({
+            title: 'Orden efectuada con exito',
+            text: 'Nos estaremos comunicando con vos para ultimar detalles sobre el pago y el retiro del producto. Podes seguir comprando!',
+            icon: 'success',
+            buttons: 'Aceptar'
+        })
     }
 
     return(

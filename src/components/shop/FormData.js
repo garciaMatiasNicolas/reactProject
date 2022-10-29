@@ -22,6 +22,8 @@ const FormData = ()=>{
             setTotalPrice(totalPrice.push(500));
             e.target.setAttribute("disabled", "");
             setTotalPrice(totalPrice.reduce((a,b)=> a + b, 0))
+        }else{
+            setTotalPrice(totalPrice.reduce((a,b)=> a + b, 0))
         };
     }
 
@@ -48,7 +50,7 @@ return(
         <Link to={'/cart/order'} >
             <button id="btn-end" disabled className='text-white btn mt-3 App-btn btn-sm' data-bs-dismiss="modal" aria-label="Close">Finalizar 
             <span className="ms-3">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i className="fa-solid fa-arrow-right"></i>
             </span>
             </button>
         </Link>
